@@ -1,0 +1,629 @@
+/* Toolbar */
+.toolbar{
+    height: 50px;
+}
+.menu-btn{
+    height: 38px;
+    font-size: 18px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+.help-btn{
+    height: 38px;
+    font-size: 18px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+/* Sidebar */
+#sidebar-wrapper{
+    z-index: 1;
+    position: fixed;
+    width: 0;
+    height: 100%;
+    overflow-y: hidden;
+    background: #2C3E50;
+    opacity: 0.9;
+}
+
+/* Main content */
+#page-content-wrapper{
+    width: 100%;
+    position:absolute;
+}
+
+/* Sidebar displayed */
+#wrapper.menuDisplayed #sidebar-wrapper{
+    width: 250px;
+}
+#wrapper.menuDisplayed #page-content-wrapper{
+    padding-left: 250px;
+}
+
+/* Sidebar styling */
+.sidebar-nav{
+    padding-top: 60px;
+    padding-left: 0px;
+    list-style: none;
+}
+.sidebar-nav li{
+    text-indent: 15px;
+    line-height: 40px;
+}
+.sidebar-nav li a{
+    display: block;
+    text-decoration: none;
+    color: #ddd;
+}
+.sidebar-nav li a:hover{
+    background: #0073e6;
+}
+.sidebar-nav li a span{
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+}
+
+/* Page content 'voedingsadvies' styling */
+body{
+    position: relative;
+    margin: 0;
+}
+#page-content-nav{
+    top: 50px;
+    position: fixed;
+    background-color:  #ccebff;
+    font-size: 18px;
+}
+.big-checkbox{
+    width:30px;
+    height:30px;
+}
+
+/* Extra dietary options slider */
+#slider {
+    bottom: 0px;
+    position: fixed;
+    height: 120px;
+    background-color: #ffddb3;
+    overflow: hidden;
+}
+.slider-uitleg{
+    height: 30px;
+    border-top: solid;
+    border-top-color: #2C3E50;
+    border-bottom: solid;
+    border-bottom-color: #2C3E50;
+}
+.sliderWrap {
+    background-color: #ffddb3;
+    height: 90px;
+    white-space: nowrap;
+}
+.card-btn{
+    display: inline-block;
+    background-color: white;
+    height: 100%;
+    width: 90px;
+}
+.badge.position{
+    display: block;
+    position: relative;    
+}
+
+/* Navigation buttons extra dietary options slider */
+.owl-prev, .owl-next {    
+    width: 30px;
+    height: 30px; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.owl-prev {
+    left: 0px;
+}
+.owl-next {
+    right: 0px;
+}
+
+/* Slider div */
+.slidecontainer {
+	width: 100%;
+    text-align: center;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 75%; /* Full-width */
+    height: 50px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+	vertical-align: middle;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background: #6c757d;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 50px;
+    height: 50px;
+    background: 6c757d;
+    cursor: pointer;
+}
+
+.add-btn, .minus-btn {
+    display: inline-block;
+	height: 40px;
+    width: 40px;
+    font-size: 24px;
+	line-height: initial;
+}
+
+.add-btn {
+	margin-left: 10px;
+}
+
+.minus-btn {
+	margin-right: 10px;
+}
+
+#xl-modal{
+	max-width: 1050px;
+}
+
+#l-modal{
+	max-width: 775px;
+}
+
+.food-btn {
+    display: block;
+    width: 220px;
+    overflow: visible;
+    max-width: 220px;
+    min-width: 220px;
+    margin-top: 3px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+	background-color: #e8eef7; 
+	color: #212527;
+    white-space: normal;
+}
+
+.menu_table_wrapper, .badges_list_wrapper {
+    position: relative;
+    height: 250px;
+}
+.menu_table_wrapper .menu_table_inside, .badges_list_wrapper, .badges_list_inside {
+    max-height: 250px;
+    overflow-y: scroll;
+    overflow-x: visible;
+    width: calc(100% + 10px);
+    padding-bottom: 16px;
+}
+
+.faded_bottom {
+    
+}
+.faded_bottom:after {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    content: '';
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    width: 100%;
+    height: 30px;
+    pointer-events: none;
+}
+
+#menu_table td{
+	text-align: center;
+}
+
+#menu_table td:nth-of-type(2) {
+	max-width: 75px;
+	min-width: 75px;
+}
+
+#menu_table td.button{
+	text-align: left;
+}
+
+#menu_table .measure{
+	width: 100px;
+}
+
+#new_table tr, #new_table_faves tr, #foodbox_table tr {
+    border-bottom: 1px solid #b1b1b1;
+}
+
+#new_table tr td, #new_table_faves tr td, #foodbox_table tr td {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.type-btn{
+	width: 150px;
+    margin: 3px;
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.status-slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+	width: 100%; /* Full-width */
+    height: 30px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+	vertical-align: middle;
+}
+
+/* Mouse-over effects */
+.status-slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.status-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 30px;
+    background: #6c757d;
+    cursor: pointer;
+}
+
+.status-slider::-moz-range-thumb {
+    width: 5px;
+    height: 30px;
+    background: #6c757d;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #000;
+} 
+
+
+/* Agenda */
+/* Extra dietary options slider */
+#agenda {
+    bottom: 0px;
+    position: fixed;
+    height: 120px;
+    background-color: #ccebff;
+    overflow: hidden;
+}
+.slider-uitleg{
+    height: 30px;
+    border-top: solid;
+    border-top-color: #2C3E50;
+    border-bottom: solid;
+    border-bottom-color: #2C3E50;
+}
+.sliderWrap {
+    background-color: #ffddb3;
+    height: 90px;
+    white-space: nowrap;
+}
+.card-btn{
+    display: inline-block;
+    background-color: white;
+    height: 100%;
+    width: 90px;
+}
+.badge.position{
+    display: block;
+    position: relative;    
+}
+
+#calendar {
+	text-align: center;
+}
+
+.day {
+	margin: 3px;
+	border: none;
+	font-size: 25px;
+	text-align: center;
+	height: 85px;
+	background-color: #b0defc;
+	border: 2px solid #9ad4f9;
+}
+
+.day:disabled {
+    text-decoration: underline;
+    color: buttontext;
+}
+
+/* New status sliders */
+.one{
+  position:absolute;
+	margin-top:-10px;
+	/*z-index:1;*/
+	height:40px;
+	width:20px;
+	border-radius:25px;
+	background-color: #C0C0C0;
+}
+
+.progress {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: visible;
+}
+.progress-threshold-wrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: calc(100%);
+    height: 20px;
+    overflow: visible;
+}
+
+.bar-text {
+  text-align: center;
+}
+
+.th-text {
+  margin-top: 9px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.points {
+    display: inline-block;
+    width: 120px !important;
+    vertical-align: middle;
+}
+
+#text-total {
+    padding-top: 13px;
+}
+
+.moment-btn {
+    width: 200px;
+    text-align: center;
+    margin: 3px;
+    background-color: #6c757d;
+    color: white;
+}
+
+.alt-tab td {
+    min-width: 150px;
+}
+
+#warn {
+    color: darkred;
+}
+
+.warn {
+    color: darkred;
+}
+
+.measureInput {
+    width: 50px;
+}
+
+.measure {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.modal-open .modal {
+    overflow: hidden;
+}
+
+
+body.modal-open {
+  /*overflow-y: scroll;
+  margin: 0 !important;*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.score, .stars, .profile {
+    width: 450px;
+}
+
+.stars {
+    text-align: right;
+}
+
+.gamebtn {
+    width: 200px;
+    text-align: center;
+}
+    
+#moments-intake-list {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+#foodbox-progress {
+    margin: 1rem;
+}
+
+.badges_description {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.badges_list_wrapper {
+    overflow: hidden;
+}
+
+.badges_list_inside {
+    width: 100%;
+}
+
+.badges_list_wrapper.faded_bottom:after {
+    width: calc(100% - 10px);
+}
+
+/* flowers at the bottom */
+.container-fluid-flowers {
+    bottom: 115px;
+    position: fixed;
+    width: 101%;
+    margin-left: -5px;
+    text-align: center;
+    pointer-events:none;
+}
+
+.explain {
+    margin-bottom: 15px;
+    border: solid 1px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.game-status {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.game-question {
+    text-align: center;
+    font-size: 20px;
+}
+
+.game-btn {
+    width: 47%;
+    margin-top: 15px;
+    white-space: normal;
+    min-height: 50px;
+}
+
+#feedback-game4{
+    text-align: center;
+}
+
+#protein-guess{
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+#allProducts-game4 button{
+    min-width: 300px;
+    max-width: 300px;
+    width: 300px;
+}
+
+.date-achievement{
+    color: grey;
+}
+
+.mini-game-background {
+    background-image: url('../images/mini_game_background.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.mini-game-content {
+    padding-top: 40px;
+    padding-left: 27px;
+    padding-right: 25px;
+    min-height: 350px;
+}
+
+.mini-game-title{
+    color: white;
+    border: none;
+}
+
+.mini-game-footer{
+    border: none;
+}
+
+#allProducts {
+    margin: 0 auto;
+}
+
+.game-food-btn {
+    min-width: 350px;
+    max-width: 350px;
+}
+
+
+
+.mini-game-large-background {
+    background-image: url('../images/mini_game_background_large.png');
+    background-size: 118% 125%;
+    background-repeat: no-repeat;
+}
+
+.mini-game-large-content {
+    padding-top: 68px;
+    padding-left: 25px;
+    padding-right: 25px;
+    min-height: 500px;
+}
+
+.mini-game-bigger-content {
+    padding-top: 68px;
+    padding-left: 75px;
+    padding-right: 75px;
+    min-height: 350px;
+}
+
+.game-status-small {
+    padding-bottom: 7px;
+}
+
+.badge_image {
+    width: 60px;
+    text-align: center;
+}
+
+.bingo-btn {
+    display: block;
+    width: 50px;
+    overflow: visible;
+    max-width: 50px;
+    min-width: 50px;
+    margin-top: 3px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+	background-color: #e8eef7; 
+	color: #212527;
+    white-space: normal;
+}
+
+.explain-feedback {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border: solid 1px;
+    padding: 5px;
+}
+
+#game-4-explain {
+    margin-left: 20px;
+}

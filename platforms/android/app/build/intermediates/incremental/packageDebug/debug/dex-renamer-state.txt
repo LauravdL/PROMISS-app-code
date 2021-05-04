@@ -1,0 +1,4 @@
+#Tue Feb 16 10:45:46 CET 2021
+base.0=C\:\\Users\\lle510\\Documents\\GitHub\\PROMISS_app\\PROMISS_app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=C\:\\Users\\lle510\\Documents\\GitHub\\PROMISS_app\\PROMISS_app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

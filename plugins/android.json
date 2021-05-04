@@ -1,0 +1,27 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.example.promiss"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.example.promiss"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.example.promiss"
+    },
+    "cordova-sqlite-ext": {
+      "PACKAGE_NAME": "com.example.promiss"
+    },
+    "cordova-plugin-dbcopy": {
+      "PACKAGE_NAME": "com.example.promiss"
+    }
+  },
+  "dependent_plugins": {}
+}

@@ -1,0 +1,66 @@
+{
+  "_from": "cordova-plugin-dbcopy",
+  "_id": "cordova-plugin-dbcopy@2.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-Vca7vpT9WAJzd7IkM34AyXrxOcvJ2ICj9JICe1ntO5Z4NK9sY7STgIoIpLuwg0J3DvI75JEOyl3I6oCJqYr6IA==",
+  "_location": "/cordova-plugin-dbcopy",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-dbcopy",
+    "name": "cordova-plugin-dbcopy",
+    "escapedName": "cordova-plugin-dbcopy",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-dbcopy/-/cordova-plugin-dbcopy-2.1.0.tgz",
+  "_shasum": "21ed0964148405e4a5da8ef03a59cff304fb229e",
+  "_spec": "cordova-plugin-dbcopy",
+  "_where": "C:\\Users\\User1\\Documents\\GitHub\\PROMISS_app\\PROMISS_app",
+  "author": {
+    "name": "Rahul Pandey"
+  },
+  "bugs": {
+    "url": "https://github.com/an-rahulpandey/cordova-plugin-dbcopy/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-dbcopy",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova/Phonegap plugin to copy SQLite Database from www directory to app database directory",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/an-rahulpandey/cordova-plugin-dbcopy",
+  "keywords": [
+    "sqlite db copy",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "db copy",
+    "cordova sqlite",
+    "database copy",
+    "sqlite database copy"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-dbcopy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/an-rahulpandey/cordova-plugin-dbcopy.git"
+  },
+  "version": "2.1.0"
+}

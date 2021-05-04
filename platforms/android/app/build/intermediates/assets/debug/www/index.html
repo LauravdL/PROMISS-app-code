@@ -1,0 +1,1028 @@
+<html>
+  <head>
+	<meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+    <title>
+      PROMISS Interface
+    </title>
+	
+	<!-- Spread.Sheets script for Excel -->
+    <script src="js/offlines/jquery1.js" type="text/javascript"></script>
+    <script src="js/offlines/jquery2.js" type="text/javascript"></script>
+
+    <link href="style/offlines/grapecity.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/offlines/grapecity1.js"></script>
+    <script type="text/javascript" src="js/offlines/grapecity2.js"></script>
+    
+    <!-- <script type="text/javascript" src="js/sheet.js"></script> -->
+	<script src="cordova.js"></script>
+	<!-- <script type="text/javascript" src="js/logging.js"></script> Logging currently disabled--> 
+	<script type="text/javascript" src="js/database_functions.js"></script>
+	<script type="text/javascript" src="js/actions.js"></script>
+	<script type="text/javascript" src="js/values.js"></script>
+      
+    <script type="text/javascript" src="js/gamification.js"></script>
+    <script type="text/javascript" src="js/db_functions_gamification.js"></script>  
+      
+	<script type="text/javascript" src="js/setup-3.js"></script>
+	<script type="text/javascript" src="js/htmlFunctions.js"></script>
+	<script type="text/javascript" src="js/flow.js"></script>
+    
+    <script type="text/javascript" src="js/profile_actions.js"></script>
+      <script type="text/javascript" src="js/achievements.js"></script>
+	
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" type="text/css" href="style/offlines/bootstrap1.css">
+    <script type="text/javascript" src="js/offlines/bootstrap1.js"></script>
+
+    <!-- Owl Carousel 2 -->
+    <link rel="stylesheet" type="text/css" href="style/offlines/owl1.css">
+    <link rel="stylesheet" type="text/css" href="style/offlines/owl2.css">
+    <script type="text/javascript" src="js/offlines/owl1.js"></script>
+
+    <!-- Custom style sheet -->
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+
+    <!-- Font Awesome -->
+    <script defer src="js/offlines/font.js"></script>
+  </head>
+
+
+  <body data-target="#navbar-voedingsadvies" data-offset="0">
+  
+	
+
+    <!-- Toolbar -->
+    <nav class="toolbar navbar navbar-expand-sm navbar-light bg-light fixed-top">
+      <!-- temp commented <div class="mr-auto">
+        <a href="#" class="menu-btn btn btn-outline-secondary" id="menu-toggle">
+          <i class="fas fa-bars fa-lg"></i> Menu
+        </a>
+      </div>
+	  -->
+    <!-- Disabled, functioning code to remove     -->
+        
+        <div class="profile" id="profile">
+            <button type="button" class="btn btn-secondary" onclick="showProfile()">Profielpagina</button></div> 
+        
+      <div class="mx-auto">
+        <a href="#"><img src="images/logo_promiss.png" height="40px"></a>
+      </div>
+        
+        <div class="score" id="score">Spelpunten worden geladen</div>
+    
+    <!-- Disabled functioning code to remove
+        <div class="stars" id="stars">
+        <p>STARS HERE</p>
+        </div>
+    -->
+
+      <!-- temp commented <div class="ml-auto">
+        <a href="#" class="help-btn btn btn-outline-secondary">
+          <i class="far fa-question-circle fa-lg"></i> Help
+        </a>
+      </div>
+	  -->
+    </nav> 
+
+    <!-- Wrapper for sidebar and page content -->
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li><a href="#"><i class="fas fa-home fa-lg fa-fw"></i><span>Startpagina</span></a></li>
+          <li><a href="#"><i class="fas fa-utensils fa-lg fa-fw"></i><span>Voedingsadvies</span></a></li>
+          <li><a href="#"><i class="fas fa-bicycle fa-lg fa-fw"></i><span>Beweegadvies</span></a></li>
+          <li><a href="#"><i class="fas fa-heartbeat fa-lg fa-fw"></i><span>Hoe staat u ervoor?</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Page content -->
+      <div id="page-content-wrapper">       
+
+		
+		<div id="page-content-nav" class="container-fluid sticky-top">
+          
+          <div class="row">
+              
+            <div class="col-sm-7">
+            <label class="container">
+						
+                <div class="progress">
+                               
+                    <div id="thw-total" class="progress-threshold-wrapper">
+                        <div class="one" id="th-total"><p class= "th-text" id="th-text-total"></p></div>
+                    </div>
+                    <div class="progress-bar" id="bar-total"></div>
+                </div>
+                          
+            </label>
+            </div>
+              
+            <div class="col-sm-5">
+                <h5 id="text-total">Uw dagtotaal is: 0 eiwitpunten</h5>
+            </div>
+              
+          </div>
+		  
+		  <div class="row">
+            <div  class="col-sm-12">
+              <nav id="navbar-voedingsadvies" class="nav nav-pills nav-justified">
+                <a class="nav-item nav-link" href="#ochtend" id="ochtenddeel">Ochtend
+                </a>    
+                <a class="nav-item nav-link" href="#middag" id="middagdeel">Middag
+                </a> 
+                <a class="nav-item nav-link" href="#avond" id="avonddeel">Avond
+                </a>    
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page content container -->
+        <div id="page-content" class="container-fluid">
+          <div class='row'>
+            <div class="col-sm-12">
+
+              <!-- Ochtend -->
+              <div id="ochtend" class="container-fluid ochtenddeel"> 
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                  
+                <div class="row">
+                  <div class="col-sm-12">
+                  <h2  class="text-center" id='welcome1'>Geef aan wat u vanmorgen heeft gegeten en gedronken.</h2>
+                  <br />
+                  </div>
+                </div>  
+
+                
+                <div id="moment0" class="row">
+                  <div class="col-sm-1">
+                  </div>
+                    <div class="col-sm-3">
+                      <h3 id="moment0-title"></h3> <br>
+					</div>
+					<div class="col-sm-4"> 
+						<button type="button" class="quick-btn btn btn-secondary" onclick="showProteinScreen(0)">Snelle invoer <img src="images/checked-symbol.png" width='50px'/></button>
+						<button type="button" class="meal-btn btn btn-secondary" onclick="callMealAdvice(0)">Samenstellen <img src="images/cutlery.png" width='50px'/></button>
+					</div>
+                    <div class="col-sm-4">
+                      <label class="container">
+						
+                           <div class="progress">
+                               
+                            <div id="thw-0" class="progress-threshold-wrapper">
+                                <div class="one" id="th-0"><p class= "th-text" id="th-text-0"></p></div>
+                               </div>
+                           <div class="progress-bar" id="bar-0"></div>
+                          </div>
+                                <br>
+                            <h5 class="bar-text" id="bar-text-0"></h5>
+                          
+                      </label>
+                    </div>
+                </div>
+				
+				<div id="moment1" class="row">
+                  <div class="col-sm-1">
+                  </div>
+                    <div class="col-sm-3">
+                      <h3 id="moment1-title"></h3> <br>
+					</div>
+					<div class="col-sm-4"> 
+						<button type="button" class="quick-btn btn btn-secondary" onclick="showProteinScreen(1)">Snelle invoer <img src="images/checked-symbol.png" width='50px'/></button>
+						<button type="button" class="meal-btn btn btn-secondary" onclick="callMealAdvice(1)">Samenstellen <img src="images/cutlery.png" width='50px'/></button>
+					</div>
+                    <div class="col-sm-4">
+                      <label class="container">
+						
+                           <div class="progress">
+                            <div id="thw-1" class="progress-threshold-wrapper">
+                               
+                                <div class="one" id="th-1"><p class= "th-text" id="th-text-1"></p></div>
+                               </div>
+                           <div class="progress-bar" id="bar-1"></div>
+                          </div>
+                                <br>
+                            <h5 class="bar-text" id="bar-text-1"></h5>
+                          
+                      </label>
+                    </div>
+                </div>
+				<div id="moment2" class="row">
+                  <div class="col-sm-1">
+                  </div>
+                    <div class="col-sm-3">
+                      <h3 id="moment2-title"></h3> <br>
+					</div>
+					<div class="col-sm-4"> 
+						<button type="button" class="quick-btn btn btn-secondary" onclick="showProteinScreen(2)">Snelle invoer <img src="images/checked-symbol.png" width='50px'/></button>
+						<button type="button" class="meal-btn btn btn-secondary" onclick="callMealAdvice(2)">Samenstellen <img src="images/cutlery.png" width='50px'/></button>
+					</div>
+                    <div class="col-sm-4">
+                      <label class="container">
+						
+                           <div class="progress">
+                               <div id="thw-2" class="progress-threshold-wrapper">
+                                <div class="one" id="th-2"><p class= "th-text" id="th-text-2"></p></div>
+                               </div>
+                           <div class="progress-bar" id="bar-2"></div>
+                          </div>
+                                <br>
+                            <h5 class="bar-text" id="bar-text-2"></h5>
+                          
+                      </label>
+                    </div>
+                </div>
+              </div> <!-- end ochtend --> 
+            
+              <!-- Middag -->
+              <div id="middag" class="container-fluid middagdeel">
+                <br />
+                <br />
+                <br />  
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <div class="row">
+                  <div  class="col-sm-12">
+                  <h2  class="text-center" id='welcome2'>Geef aan wat u vanmiddag heeft gegeten en gedronken.</h2>
+                  <br />
+                  </div>
+                </div> 
+
+				<div id="moment3" class="row">
+                  <div class="col-sm-1">
+                  </div>
+                    <div class="col-sm-3">
+                      <h3 id="moment3-title"></h3> <br>
+					</div>
+					<div class="col-sm-4"> 
+						<button type="button" class="quick-btn btn btn-secondary" onclick="showProteinScreen(3)">Snelle invoer <img src="images/checked-symbol.png" width='50px'/></button>
+						<button type="button" class="meal-btn btn btn-secondary" onclick="callMealAdvice(3)">Samenstellen <img src="images/cutlery.png" width='50px'/></button>
+					</div>
+                    <div class="col-sm-4">
+                      <label class="container">
+						
+                           <div class="progress">
+                               <div id="thw-3" class="progress-threshold-wrapper">
+                                   <div class="one" id="th-3"><p class= "th-text" id="th-text-3"></p></div>
+                               </div>
+                           <div class="progress-bar" id="bar-3"></div>
+                          </div>
+                                <br>
+                            <h5 class="bar-text" id="bar-text-3"></h5>
+                          
+                      </label>
+                    </div>
+                </div>
+				
+				<div id="moment4" class="row">
+                  <div class="col-sm-1">
+                  </div>
+                  <div class="col-sm-3">
+                      <h3 id="moment4-title"></h3> <br>
+					</div>
+					<div class="col-sm-4"> 
+						<button type="button" class="quick-btn btn btn-secondary" onclick="showProteinScreen(4)">Snelle invoer <img src="images/checked-symbol.png" width='50px'/></button>
+						<button type="button" class="meal-btn btn btn-secondary" onclick="callMealAdvice(4)">Samenstellen <img src="images/cutlery.png" width='50px'/></button>
+					</div>
+                    <div class="col-sm-4">
+                      <label class="container">
+						
+                           <div class="progress">
+                               <div id="thw-4" class="progress-threshold-wrapper">
+                                <div class="one" id="th-4"><p class= "th-text" id="th-text-4"></p></div>
+                               </div>
+                           <div class="progress-bar" id="bar-4"></div>
+                          </div>
+                                <br>
+                            <h5 class="bar-text" id="bar-text-4"></h5>
+                          
+                      </label>
+                    </div>
+                </div>
+				
+				<div id="moment5" class="row">
+                  <div class="col-sm-1">
+                  </div>
+                    <div class="col-sm-3">
+                      <h3 id="moment5-title"></h3> <br>
+					</div>
+					<div class="col-sm-4"> 
+						<button type="button" class="quick-btn btn btn-secondary" onclick="showProteinScreen(5)">Snelle invoer <img src="images/checked-symbol.png" width='50px'/></button>
+						<button type="button" class="meal-btn btn btn-secondary" onclick="callMealAdvice(5)">Samenstellen <img src="images/cutlery.png" width='50px'/></button>
+					</div>
+                    <div class="col-sm-4">
+                      <label class="container">
+						
+                           <div class="progress">
+                               <div id="thw-5" class="progress-threshold-wrapper">
+                                <div class="one" id="th-5"><p class= "th-text" id="th-text-5"></p></div>
+                               </div>
+                           <div class="progress-bar" id="bar-5"></div>
+                          </div>
+                                <br>
+                            <h5 class="bar-text" id="bar-text-5"></h5>
+                          
+                      </label>
+                    </div>
+                </div>
+
+              </div> <!-- end middag -->
+                
+              <!-- Avond -->
+              <div id="avond" class="container-fluid"> 
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <div class="row">
+                  <div  class="col-sm-12">
+                  <h2  class="text-center" id='welcome3'>Geef aan wat u vanavond heeft gegeten en gedronken.</h2>
+                  <br />
+                  </div>
+                </div>
+
+				<div id="moment6" class="row">
+                  <div class="col-sm-1">
+                  </div>
+                   <div class="col-sm-3">
+                      <h3 id="moment6-title"></h3> <br>
+					</div>
+					<div class="col-sm-4"> 
+						<button type="button" class="quick-btn btn btn-secondary" onclick="showProteinScreen(6)">Snelle invoer <img src="images/checked-symbol.png" width='50px'/></button>
+						<button type="button" class="meal-btn btn btn-secondary" onclick="callMealAdvice(6)">Samenstellen <img src="images/cutlery.png" width='50px'/></button>
+					</div>
+                    <div class="col-sm-4">
+                      <label class="container">
+						
+                           <div class="progress">
+                               <div id="thw-6" class="progress-threshold-wrapper">
+                                <div class="one" id="th-6"><p class= "th-text" id="th-text-6"></p></div>
+                               </div>
+                           <div class="progress-bar" id="bar-6"></div>
+                          </div>
+                                <br>
+                            <h5 class="bar-text" id="bar-text-6"></h5>
+                          
+                      </label>
+                    </div>
+                </div>
+				
+				<div id="moment7" class="row">
+                  <div class="col-sm-1">
+                  </div>
+					<div class="col-sm-3">
+                      <h3 id="moment7-title"></h3> <br>
+					</div>
+					<div class="col-sm-4"> 
+						<button type="button" class="quick-btn btn btn-secondary" onclick="showProteinScreen(7)">Snelle invoer <img src="images/checked-symbol.png" width='50px'/></button>
+						<button type="button" class="meal-btn btn btn-secondary" onclick="callMealAdvice(7)">Samenstellen <img src="images/cutlery.png" width='50px'/></button>
+					</div>
+                    <div class="col-sm-4">
+                      <label class="container">
+						
+                           <div class="progress">
+                               <div id="thw-7" class="progress-threshold-wrapper">
+                                <div class="one" id="th-7"><p class= "th-text" id="th-text-7"></p></div>
+                               </div>
+                           <div class="progress-bar" id="bar-7"></div>
+                          </div>
+                                <br>
+                            <h5 class="bar-text" id="bar-text-7"></h5>
+                          
+                      </label>
+                    </div>                </div>
+				
+				<div id="moment8" class="row">
+                  <div class="col-sm-1">
+                  </div>
+					<div class="col-sm-3">
+                      <h3 id="moment8-title"></h3> <br>
+					</div>
+					<div class="col-sm-4"> 
+						<button type="button" class="quick-btn btn btn-secondary" onclick="showProteinScreen(8)">Snelle invoer <img src="images/checked-symbol.png" width='50px'/></button>
+						<button type="button" class="meal-btn btn btn-secondary" onclick="callMealAdvice(8)">Samenstellen <img src="images/cutlery.png" width='50px'/></button>
+					</div>
+                    <div class="col-sm-4">
+                      <label class="container">
+						
+                           <div class="progress">
+                               <div id="thw-8" class="progress-threshold-wrapper">
+                                    <div class="one" id="th-8"><p class= "th-text" id="th-text-8"></p></div>
+                               </div>
+                           <div class="progress-bar" id="bar-8"></div>
+                          </div>
+                                <br>
+                            <h5 class="bar-text" id="bar-text-8"></h5>
+                          
+                      </label>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+				<br />
+
+
+              </div> <!-- end avond -->              
+
+            </div> <!-- end col-sm-12 in page content container-->
+          </div> <!-- end row in page content container -->
+        </div> <!-- end page content container-->
+
+        <!-- Notification modal -->        
+        <div class="modal fade container-fluid" id="notification" tabindex="-1" role="dialog" aria-labelledby="notificatie" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" data-backdrop="static">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Bericht</h5>
+              </div>
+              <div id="notification-content" class="modal-body">
+              </div>
+              <div class="justify-content-center modal-footer">
+                <button type="button" class="nu-btn btn btn-primary" data-dismiss="modal">Eiwitinname nu invullen</button>
+                <button type="button" class="later-btn btn btn-secondary" data-dismiss="modal">Stel een herinnering in</button>              </div>
+            </div>
+          </div>
+        </div>        
+
+        <!-- Reminder modal -->      
+        <div class="modal fade container-fluid" id="reminder" tabindex="-1" role="dialog" aria-labelledby="reminder" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" data-backdrop="static">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Herinnering</h5>
+              </div>
+              <div id="reminder-content" class="modal-body">
+              </div>
+              <div class="justify-content-center modal-footer">
+                <button type="button" class="nu-btn btn btn-primary" data-dismiss="modal">Eiwitinname nu invullen</button>
+                <button type="button" class="later-btn btn btn-secondary" data-dismiss="modal">Stel een herinnering in</button>
+         
+              </div>
+            </div>
+          </div>
+        </div>
+		
+		<!-- Protein short modal -->      
+        <div class="modal fade container-fluid" id="protein-short" tabindex="-1" role="dialog" aria-labelledby="protein-short" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Eiwitinname</h5>
+              </div>
+              <div id="protein-short-content" class="modal-body">
+				<p id="protein-short-text">Geef hieronder aan hoeveel eiwitpunten uw maaltijd waard was. De standaardwaarde die u ziet is het aantal dat u zou moeten innemen. Heeft u hieraan voldaan? Dan klikt u op <i>Bevestig inname</i>. Maar u kunt ook het aantal eiwitten aanpassen met behulp van de plus- en minknoppen. Indien u niet weet hoeveel eiwitpunten u heeft ingenomen, of hulp wilt bij het samenstellen van uw maaltijd, kiest u voor <i>Maaltijd samenstellen</i>.</p>
+				<div class="slidecontainer">
+                    <button type="button" class="minus-btn btn btn-secondary" onclick="substractProtein()">-</button>
+                    <h5 id="points" class="points"></h5>
+                    <button type="button" class="add-btn btn btn-secondary" onclick="addProtein()">+</button>
+				</div>
+                    <br>
+              <div class="progress">
+                <div id="thw" class="progress-threshold-wrapper">
+                    <div class="one" id="th"><p id="th-text" class="th-text"></p></div>
+                </div>
+  			   <div class="progress-bar" id="bar"></div>
+		      </div>
+                    <br>
+                <h5 id="bar-text" class="bar-text"></h5>
+                    
+              </div>
+              <div class="justify-content-center modal-footer">
+                <button type="button" class="help-btn btn btn-secondary" data-dismiss="modal">Maaltijd samenstellen</button>
+				<button type="button" class="done-btn btn btn-primary" data-dismiss="modal">Bevestig inname</button>
+            </div>
+          </div>
+        </div>
+     </div>
+           
+		<!-- Protein long / diet help modal -->
+		<div class="modal fade container-fluid" id="protein-advice" tabindex="-1" role="dialog" aria-labelledby="advisor" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" id="xl-modal" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Maaltijd samenstellen</h5>
+              </div>
+              <div id="protein-content" class="modal-body">
+				<div class="col-sm-12">
+					<div class="row">
+						<p id="protein-advice-text">Hieronder ziet u een voorbeeldmenu met de juiste hoeveelheid eiwitten voor dit eetmoment. Let op dat u naast dit advies <b>geen</b> andere eiwitproducten eet. Energierijke producten zijn herkenbaar aan een &#9888;-teken. Neem van deze producten liever niet meer dan 1 tot 3 porties per dag (afhankelijk van of het een dagelijks product is zoals olie of een extraatje, zoals een koek of gebak).</p>
+					</div>
+					<div class="row">
+						<div class="col-sm-7" id="advice-content">
+							HIER KOMT UITLEG OVER UW MAALTIJD TE STAAN
+						</div>
+						<div class="col-sm-5" id="alternatives">
+							HIER KOMEN DE ALTERNATIEVEN TE STAAN
+						</div>
+					</div>
+					<div class="row" style="display:block">
+                        <br>
+						<div class="progress">
+                            <div id="thw-long" class="progress-threshold-wrapper">
+                                <div class="one" id="th-long"><p id="th-text-long" class="th-text"></p></div>
+                            </div>
+                       <div class="progress-bar" id="bar-long"></div>
+                      </div>
+                            <br>
+                        <h5 id="bar-text-long" class="bar-text"></h5>
+						
+					</div>
+				</div>
+              </div>
+              <div class="justify-content-center modal-footer">
+				<button type="button" class="done-btn btn btn-primary" data-dismiss="modal">Bevestig inname</button>
+              </div>
+            </div>
+          </div>
+        </div>
+		
+		<!-- Confirm intake via foodbox -->        
+        <div class="modal fade container-fluid" id="notification-foodbox" tabindex="-1" role="dialog" aria-labelledby="notificatie-fb" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Bericht</h5>
+              </div>
+              <div id="notification-foodbox-content" class="modal-body">
+              </div>
+              <div class="justify-content-center modal-footer">
+                <button type="button" class="confirm-foodbox-btn btn btn-secondary" data-dismiss="modal" id="confirm-foodbox">Bevestig inname</button>
+                <button type="button" class="more-foodbox-btn btn btn-primary" id="more-foodbox" data-dismiss="modal">Aanvullen</button>
+				<button type="button" class="discard-foodbox-btn btn btn-secondary" data-dismiss="modal">Dit klopt niet</button> 	</div>
+            </div>
+          </div>
+        </div> 
+
+		<!-- Foodbox protein short modal -->      
+        <div class="modal fade container-fluid" id="foodbox-protein-short" tabindex="-1" role="dialog" aria-labelledby="foodbox-protein-short" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document" >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Eiwitinname</h5>
+              </div>
+              <div id="protein-foodbox-short-content" class="modal-body">
+				<p id='foodbox-short-text'>Geef hieronder aan hoeveel eiwitten u naast het product/de producten uit de foodbox heeft ingenomen. Let op, geef het totale aantal punten dat uw maaltijd waard was aan, inclusief het product/de producten uit de foodbox. U ziet hieronder het aantal punten dat u op dit moment al heeft ingenomen, op basis van de gegevens uit de foodbox. U kunt dit aanpassen met behulp van de plus- en minknoppen. Heeft u het juiste aantal punten geselecteerd? Klik dan op <i>Bevestig inname</i>. Indien u niet weet hoeveel eiwitpunten u heeft ingenomen, of hulp wilt bij het samenstellen van uw maaltijd, kiest u voor <i>Maaltijd samenstellen</i>.</p>
+				<div class="slidecontainer">
+					<button type="button" class="minus-btn btn btn-secondary" onclick="substractProtein('box')">-</button>
+					<h5 id="points-box" class="points"></h5>
+					<button type="button" class="add-btn btn btn-secondary" onclick="addProtein('box')">+</button>
+					
+                </div>
+                    <br>
+              <div class="progress">
+                  <div id="thw-box" class="progress-threshold-wrapper">
+                    <div class="one" id="th-box"><p id="th-text-box" class="th-text"></p></div>
+                  </div>
+  			   <div class="progress-bar" id="bar-box"></div>
+		      </div>
+                    <br>
+                <h5 id="bar-text-box" class="bar-text"></h5>
+                    
+              </div>
+              <div class="justify-content-center modal-footer">
+                <button type="button" class="help-foodbox-btn btn btn-secondary" data-dismiss="modal">Maaltijd samenstellen</button>
+				<button type="button" class="done-foodbox-btn btn btn-primary" data-dismiss="modal">Bevestig inname</button>
+              </div>
+				
+              </div>
+            </div>
+          </div>
+        
+        <!-- Unknown intake foodbox -->        
+        <div class="modal fade container-fluid" id="notification-foodbox-unknown" tabindex="-1" role="dialog" aria-labelledby="notificatieFoodboxUnknown" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Bericht</h5>
+              </div>
+              <div id="notification-foodbox-unknown-content" class="modal-body">
+              </div>
+              <div class="justify-content-center modal-footer">
+                <button type="button" class="product-foodbox-btn btn btn-primary" data-dismiss="modal">Product kiezen</button>
+				<button type="button" class="ignore-foodbox-btn btn btn-secondary" data-dismiss="modal">Ik heb niks gegeten uit de foodbox</button>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+    <!-- Unknown intake foodbox choice -->        
+        <div class="modal fade container-fluid" id="notification-foodbox-unknown-choice" tabindex="-1" role="dialog" aria-labelledby="notificatieFoodboxUnknownChoice" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document" id="xl-modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Bericht</h5>
+              </div>
+              <div id="notification-foodbox-unknown-products-content" class="modal-body">
+                  <p id='foodbox-choice-text'>Geef hieronder aan welke producten u uit de foodbox hebt gegeten en bij welk eetmoment deze horen. In de linkerkolom kunt u klikken op het eetmoment waarbij uw inname hoort. In de rechterkolom kunt u het product/de producten die u uit de foodbox hebt gegeten invoeren. U ziet daarnaast een lijstje verschijnen met alle producten die u heeft geselecteerd. </p>
+                  
+                  <h6 id="warning" class='warn'></h6>
+                  
+                  <div class="row">
+						<div class="col-sm-3" id="moments-intake">
+							Hier komen de dagdelen te staan
+						</div>
+                        <div class="col-sm-5" id="foodBoxProducts">
+							Hier komen de alle producten te staan
+						</div>
+						<div class="col-sm-4" id="foodBoxChosen">
+							<h5>Producten uit de foodbox die u heeft gegeten: </h5>
+						</div>
+                      
+					</div>
+                  
+                  <div class="row" style="display:block">
+                        <br>
+						<div class="progress" id="foodbox-progress">
+                            <div id="thw-prod" class="progress-threshold-wrapper">
+                             <div class="one" id="th-prod"><p id="th-text-prod" class="th-text"></p></div>
+                            </div>
+                       <div class="progress-bar" id="bar-prod"></div>
+                      </div>
+                            <br>
+                        <h5 id="bar-text-prod" class="bar-text"></h5>
+						
+					</div>
+              </div>
+              <div class="justify-content-center modal-footer">
+                <button type="button" class="choice-foodbox-btn btn btn-primary" >Producten invoeren</button>
+				<button type="button" class="ignore-foodbox-btn btn btn-secondary" data-dismiss="modal">Ik heb niks gegeten uit de foodbox</button> 	</div>
+            </div>
+          </div>
+        </div> 
+          
+        <!-- Mini-game modals -->        
+        <div class="modal fade container-fluid" id="game-1" tabindex="-1" role="dialog" aria-labelledby="game-1" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document" id='l-modal'>
+            <div class="modal-content" id="mini-game-1-modal">
+              <div class="modal-header" id="mini-game-1-title">
+                <h5 class="modal-title">Mini-game: raad het aantal eiwitpunten</h5>
+              </div>
+              <div id="game-1-content" class="modal-body">
+                <div id="startScreen-1">
+                    <div class='row'>
+                  <div id="game-1-explain" class="explain col-sm-7">
+                      Welkom bij het spel 'raad het aantal eiwitpunten'! Raad telkens bij het gegeven product hoeveel eiwitpunten dit waard is. Selecteer het juiste aantal punten door gebruik te maken van de + en - knop. Druk vervolgens op 'controleer antwoord'. U ziet dan of uw antwoord correct is. Om door te gaan drukt u op 'volgende ronde'. 1 spel bestaat uit 5 raadbeurten. Voor elk goed antwoord krijgt u 2 punten, zit u 0.5 eiwitpunten naast het goede antwoord dan krijgt u 1 punt. Succes! Druk op 'Start het spel' om te beginnen.</div>
+                    <div class="col-sm-5">
+                        <img src="images/question_mark.jpg" height='300px'>
+                    </div>
+                    </div>  
+                  </div>
+                  <div id="game-1-play">
+                      <div id="game-1-status" class="game-status"></div>
+                      <div id="game-1-question" class="game-question"></div>
+                      <div class="slidecontainer" id="pointsGuess">
+                        <button type="button" class="minus-btn btn btn-secondary" onclick="substractAnswer('answer1')">-</button>
+                            <h5 id="answer1" class="points"></h5>
+                        <button type="button" class="add-btn btn btn-secondary" onclick="addAnswer('answer1')">+</button>
+				    </div>
+                      <div id="game-1-answer"></div>
+                  </div>
+              </div>
+                <div class="justify-content-center modal-footer" id="mini-game-1-footer">
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game1-start" onClick="closeExplanation(1)">Start het spel</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game1-check" onClick="checkAnswer(1)">Controleer antwoord</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game1-next" onClick="miniGames(1)">Volgende ronde</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game1-last" onClick="miniGamesFinish(1)">Spel afronden</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game1-finish" style="display: none" onClick="closeMiniGame()">Afsluiten</button>
+                </div>
+            </div>
+          </div>
+        </div>  
+          
+          <div class="modal fade container-fluid" id="game-2" tabindex="-1" role="dialog" aria-labelledby="game-2" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document" id='l-modal'>
+            <div class="modal-content" id="mini-game-2-modal">
+              <div class="modal-header" id="mini-game-2-title">
+                <h5 class="modal-title">Mini-game: meer of minder punten?</h5>
+              </div>
+              <div id="game-2-content" class="modal-body">
+                  <div id="startScreen-2">
+                  <div id="game-2-explain" class="explain">
+                      Welkom bij het spel 'meer of minder punten?'! U krijgt steeds een vraag waarop u antwoord moet geven. U heeft telkens de keuze uit 2 producten als antwoord. 1 spel bestaat uit 10 raadbeurten. Voor elk goed antwoord krijgt u 1 punt. Succes! Druk op 'Start het spel' om te beginnen.
+                  </div>
+                      <img src='images/weighter.jpg' height='300px' style='padding-left: 75px'>
+                  </div>
+                  <div id="game-2-play">
+                      <div id="game-2-status" class="game-status"></div>
+                      <div id="game-2-question" class="game-question"></div>
+                      <div class="slidecontainer" id="productsGuess">
+                        <button type="button" id="prod1" class="game-btn btn btn-secondary" onclick="checkAnswer(2,0)"></button>
+                        <button type="button" id="prod2" class="game-btn btn btn-secondary" onclick="checkAnswer(2,1)"></button>
+				    </div>
+                      <div id="game-2-answer"></div>
+                  </div>
+              </div>
+                <div class="justify-content-center modal-footer" id="mini-game-2-footer">
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game2-start" onClick="closeExplanation(2)">Start het spel</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game2-next" onClick="miniGames(2)">Volgende ronde</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game2-last" onClick="miniGamesFinish(2)">Spel afronden</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game2-finish" style="display: none" onClick="closeMiniGame()">Afsluiten</button>
+                </div>
+            </div>
+          </div>
+        </div> 
+          
+        <div class="modal fade container-fluid" id="game-3" tabindex="-1" role="dialog" aria-labelledby="game-3" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" id="l-modal" role="document">
+            <div class="modal-content" id="mini-game-3-modal">
+              <div class="modal-header" id="mini-game-3-title">
+                <h5 class="modal-title">Mini-game: kies de producten</h5>
+              </div>
+              <div id="game-3-content" class="modal-body">
+                  <div id="startScreen-3">
+                      <div class="row">
+                  <div id="game-3-explain" class="explain col-sm-7">
+                      Welkom bij het spel 'kies de producten'! U krijgt de opdracht om uit 10 producten alle producten te selecteren (door erop te drukken) die een bepaald aantal eiwitpunten waard zijn. Dit kan één product zijn, maar het kunnen er ook meer zijn. Wanneer u alle producten heeft geselecteerd, drukt u op 'controleer antwoord'. U krijgt 10 punten voor dit spel, voor elk fout antwoord gaat daar 1 punt vanaf. Succes! Druk op 'Start het spel' om te beginnen.
+                  </div>
+                          <div class="col-sm-5">
+                              <img src='images/select.jpg' height="250px">
+                          </div>
+                      </div></div>
+                  <div id="game-3-feedback" class="explain-feedback">U ziet nu de juiste antwoorden. Uw antwoorden zijn donkergrijs. Producten die u terecht niet hebt aangeklikt zijn lichter gemaakt. Dikgedrukt ziet u de producten die u had moeten aanklikken.</div>
+                  <div id="game-3-play">
+                      <div id="game-3-status" class="game-status"></div>
+                      <div id="game-3-question" class="game-question"></div>
+                      <div id="allProducts"></div>
+                  </div>
+              </div>
+                <div class="justify-content-center modal-footer" id="mini-game-3-footer">
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game3-start" onClick="closeExplanation(3)">Start het spel</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game3-check" onClick="checkAnswer(3)">Controleer antwoord</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game3-next" onClick="miniGames(3)">Volgende ronde</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game3-last" onClick="miniGamesFinish(3)">Spel afronden</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game3-finish" style="display: none" onClick="closeMiniGame()">Afsluiten</button>
+                </div>
+            </div>
+          </div>
+        </div>  
+          
+        <div class="modal fade container-fluid" id="game-4" tabindex="-1" role="dialog" aria-labelledby="game-4" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document" id="xl-modal">
+            <div class="modal-content" id="mini-game-4-modal">
+              <div class="modal-header" id="mini-game-4-title">
+                <h5 class="modal-title">Mini-game: zoek de paren</h5>
+              </div>
+              <div id="game-4-content" class="modal-body">
+                  <div id="startScreen-4">
+                      <div class="row">
+                  <div id="game-4-explain" class="explain col-sm-6">
+                      Welkom bij het spel 'zoek de paren'! U krijgt 10 producten te zien, waarin u 5 paren moet zoeken van producten met evenveel eiwitpunten. Vorm een paar door 2 producten aan te klikken. Als u 2 producten heeft aangeklikt, klikt u op 'controleer paar' en ziet u of het goed was. Vervolgens wordt u gevraagd hoeveel punten de producten waard zijn (apart) en drukt u op 'controleer antwoord' om te zien of het goed is. Daarna kunt u het volgende paar selecteren. Als het door u gevormde paar niet klopt, kunt u nog een keer op een van de producten klikken om deze niet langer te selecteren. Voor elk gevonden paar krijgt u 1 punt. Als u ook het aantal punten voor een paar goed raadt, krijgt u daar 1 extra punt voor. Succes! Druk op 'Start het spel' om te beginnen.
+                  </div>
+                          <div class="col-sm-5">
+                          <img src="images/pairsGameIcon.png" height='300px'>
+                               </div>
+                      </div>
+                  </div>
+                  <div id="game-4-play">
+                      <div id="game-4-status" class="game-status-small"></div>
+                      <div id="game-4-question" class="game-question"></div>
+                      <div class="row">
+                        <div class="col-sm-7">
+                            <div id="allProducts-game4"></div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div id="protein-guess">
+                                <p class="game-question">Hoeveel eiwitpunten zijn de geselecteerde producten waard (per product)?</p>
+                                <div class="slidecontainer" id="pointsGuess">
+                                <button type="button" class="minus-btn btn btn-secondary" onclick="substractAnswer('answer-game4')">-</button>
+                                    <h5 id="answer-game4" class="points"></h5>
+                                <button type="button" class="add-btn btn btn-secondary" onclick="addAnswer('answer-game4')">+</button>
+                                    <p>Klik op 'controleer antwoord' om hets antwoord te controleren en door te gaan met het zoeken van paren.</p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div id="feedback-game4"></div>  
+                  </div>
+              </div>
+                <div class="justify-content-center modal-footer" id="mini-game-4-footer">
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game4-start" onClick="closeExplanation(4)">Start het spel</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game4-check" onClick="checkAnswer('4a')">Controleer paar</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game4-next" onClick="checkAnswer('4b')">Controleer antwoord</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game4-last" onClick="miniGamesFinish(4)">Spel afronden</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game4-finish" data-dismiss="modal" style="display: none" onClick="closeMiniGame()">Afsluiten</button>
+                </div>
+            </div>
+          </div>
+        </div>  
+          
+        <div class="modal fade container-fluid" id="game-5" tabindex="-1" role="dialog" aria-labelledby="game-5" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document" id="l-modal">
+            <div class="modal-content" id="mini-game-5-modal">
+              <div class="modal-header" id="mini-game-5-title">
+                <h5 class="modal-title">Mini-game: eiwitbingo</h5>
+              </div>
+              <div id="game-5-content" class="modal-body">
+                  <div id="startScreen-5">
+                  <div id="game-5-explain" class="explain">
+                      Welkom bij het spel 'eiwitbingo'! U ziet zometeen een bingokaart met eiwitpunten. Elke beurt komt er een product te staan, waarbij u het juiste aantal eiwitpunten moet aanklikken op uw bingokaart. Aan het begin van het spel heeft u 10 punten. Wanneer u het verkeerde aantal eiwitpunten kiest, wordt hier 1 punt vanaf getrokken. Wanneer u alle vakjes correct heeft afgevinkt, heeft u bingo en krijgt u het resterende aantal punten. Heeft u geen punten meer over? Dan bent u 'game over'. Succes! Druk op 'Start het spel' om te beginnen.
+                      </div>
+                  <img src="images/bingoIcon.png" height='175px' style="margin-left:100px">
+                  </div>
+                  <div id="game-5-play">
+                      <div id="game-5-status" class="game-status"></div>
+                      <div class="row">
+                          <div class="col-sm-6">
+                            <div id="game-5-question" class="game-question"></div>
+                            
+                          </div>
+                        <div class="col-sm-6">
+                            <div id="bingo">
+                            </div>
+                          </div>
+                      </div>
+                      
+
+                      <div id="feedback-game5"></div>  
+                  </div>
+              </div>
+                <div class="justify-content-center modal-footer" id="mini-game-5-footer">
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game5-start" onClick="closeExplanation(5)">Start het spel</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game5-last" onClick="miniGamesFinish(5)">Spel afronden</button>
+                    <button type="button" class="choice-foodbox-btn btn btn-primary" id="game5-finish" data-dismiss="modal" style="display: none" onClick="closeMiniGame()">Afsluiten</button>
+                </div>
+            </div>
+          </div>
+        </div>  
+          
+        <!-- Profile modal -->        
+        <div class="modal fade container-fluid" id="profileScreen" tabindex="-1" role="dialog" aria-labelledby="profileScreen" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" id="xl-modal" role="document" data-backdrop="static">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Profiel</h5>
+              </div>
+              <div id="profileScreen-content" class="modal-body">
+                  <div id="profileScreen-content-greeting" class="modal-body">
+                    </div>
+                  <div class="row">
+                    <div class="col-sm-6" id="profileScreen-content-data">
+                      </div>
+                      
+                      <div class="col-sm-6" >
+                            <div id="profileScreen-badges">
+                                Hier komen de badges te staan.
+
+                          </div>   
+                      </div>  
+                  </div>
+                 
+              </div>
+              <div class="justify-content-center modal-footer">
+                <button type="button" class="btn btn-primary" id="profile-finish" onClick="closeAllScreens()">Afsluiten</button> </div>
+            </div>
+          </div>
+        </div> 
+          
+        <!-- Achievement modal -->        
+        <div class="modal fade container-fluid" id="achievement" tabindex="-1" role="dialog" aria-labelledby="achievement" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document" data-backdrop="static">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Prestatie gehaald</h5>
+              </div>
+              <div id="achievement-content" class="modal-body">
+              </div>
+                <div class="modal-body"> Een overzicht van alle behaalde prestaties is te vinden op de profielpagina.</div>
+              <div class="justify-content-center modal-footer">
+                    <button type="button" class="btn btn-primary" id="profile-finish" onClick="showProfile()"  data-dismiss="modal">Profielpagina</button>
+                    <button type="button" class="btn btn-primary" id="profile-finish" onClick="closeAllScreens()"  data-dismiss="modal">Afsluiten</button>
+                 </div>
+            </div>
+          </div>
+        </div> 
+          
+          <!-- Mini-game choice modal -->        
+        <div class="modal fade container-fluid" id="miniGameChoice" tabindex="-1" role="dialog" aria-labelledby="MiniGameChoice" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document" data-backdrop="static">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Wilt u een mini-game spelen?</h5>
+              </div>
+              <div id="mini-game-choice-content" class="modal-body">
+                  
+              </div>
+              <div class="justify-content-center modal-footer">
+                    <button type="button" class="btn btn-primary" onClick="playGames(gameToStart)" data-dismiss="modal">Speel de mini-game</button>
+                    <button type="button" class="btn btn-secondary" id="profile-finish" onClick="skipGame(gameToStart)" data-dismiss="modal">Overslaan</button>
+                 </div>
+            </div>
+          </div>
+        </div>
+          
+        <!-- Garden modal -->        
+        <div class="modal fade container-fluid" id="garden-modal" tabindex="-1" role="dialog" aria-labelledby="garden-modal" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered" role="document" data-backdrop="static">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Verbetering tuin</h5>
+              </div>
+              <div id="garden-modal-content" class="modal-body">
+              </div>
+              <div class="justify-content-center modal-footer">
+                    <button type="button" class="btn btn-primary" onClick="updateProfileValues()"  data-dismiss="modal">Afsluiten</button>
+                 </div>
+            </div>
+          </div>
+        </div> 
+          
+        <div class="container-fluid" id="agenda">
+		  <div class="row">
+            <div class="col-sm-12 text-center slider-uitleg">
+              <h5 id='calender-text'>Wilt u invoeren voor een andere dag deze week? Klik dan hieronder op die dag.</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+			  <div id="calendar"> </div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="container-fluid-flowers" id="flowers">
+          <div class="row">
+            <div class="col-sm-12" id="flower_garden">
+              
+              </div>
+            </div>
+          </div>
+		
+		
+		   
+
+      </div> <!-- end page-content-wrapper -->
+
+    </div> <!-- end wrapper --> 
+
+
+
+    <!-- Scrollspy navigation script -->
+    <script type="text/javascript">
+     // $('body').scrollspy({ target: '#navbar-voedingsadvies' });
+    </script>
+    <script>
+      $('[data-spy="scroll"]').each(function () {
+        //var $spy = $(this).scrollspy('refresh')
+      })
+    </script>
+
+    <!-- Menu toggle script --> 
+    <script type="text/javascript">
+      $('#menu-toggle').click(function (e){
+        e.preventDefault();
+        $('#wrapper').toggleClass('menuDisplayed');
+      });
+    </script>   
+
+    <!-- Extra dietary options carousel slider script -->
+    <script type="text/javascript">
+      $('.owl-carousel').owlCarousel({
+          loop:false,
+          margin:10,
+          stagePadding:30,
+          nav:true,
+          navText: ['<i class="fa fa-chevron-circle-left fa-lg" aria-hidden="true"></i>','<i class="fa fa-chevron-circle-right fa-lg" aria-hidden="true"></i>'],
+          dots: false,
+          autoplay: false,
+          responsive:{
+              0:{
+                  items:3
+              },
+              600:{
+                  items:5
+              },
+              1000:{
+                  items:7
+              }
+          }
+      })
+    </script>
+    
+  </body>
+
+</html>
